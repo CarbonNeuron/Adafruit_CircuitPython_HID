@@ -44,7 +44,6 @@ class Mouse:
         # report[2] y movement
         # report[3] wheel movement
         self.report = bytearray(4)
-        self._send_no_move()
 
 
 
