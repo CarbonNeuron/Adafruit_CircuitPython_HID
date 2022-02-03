@@ -67,7 +67,6 @@ class Keyboard:
         try:
             self.release_all()
         except OSError:
-            time.sleep(1)
             self.release_all()
 
     def press(self, *keycodes: int) -> None:
