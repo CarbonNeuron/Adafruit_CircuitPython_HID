@@ -61,13 +61,8 @@ class Keyboard:
         # List of regular keys currently pressed.
         # View onto bytes 2-7 in report.
         self.report_keys = memoryview(self.report)[2:]
+        self.release_all()
 
-        # Do a no-op to test if HID device is ready.
-        # If not, wait a bit and try once more.
-        try:
-            self.release_all()
-        except OSError:
-            self.release_all()
 
     def press(self, *keycodes: int) -> None:
         """Send a report indicating that the given keys have been pressed.
