@@ -44,14 +44,9 @@ class Mouse:
         # report[2] y movement
         # report[3] wheel movement
         self.report = bytearray(4)
+        self._send_no_move()
 
-        # Do a no-op to test if HID device is ready.
-        # If not, wait a bit and try once more.
-        try:
-            self._send_no_move()
-        except OSError:
-            time.sleep(1)
-            self._send_no_move()
+
 
     def press(self, buttons: int) -> None:
         """Press the given mouse buttons.
