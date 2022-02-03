@@ -61,7 +61,7 @@ class Keyboard:
         # List of regular keys currently pressed.
         # View onto bytes 2-7 in report.
         self.report_keys = memoryview(self.report)[2:]
-        self.release_all()
+        
 
 
     def press(self, *keycodes: int) -> None:
